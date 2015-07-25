@@ -20,18 +20,12 @@ def count_bits(path)
     # Get a bit string for the whole file
     bits = file.unpack('B*')[0]
 
-    # For timing
-    start = Time.now
-
     # Just count occurences of ones and print them
     ones = bits.count('1')
     puts "Found #{ones} bits set to 1"
 
     # The zeroes will be all the other bits
     puts "Found #{bits.length - ones} bits set to 0"
-
-    # Print the time needed
-    puts "It took me #{((Time.now - start) * 1000).round(2)}ms to get those numbers"
 
   rescue SystemCallError
   	# File does not exist, so print a message
