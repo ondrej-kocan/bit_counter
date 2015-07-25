@@ -23,9 +23,12 @@ def count_bits(path)
     # For timing
     start = Time.now
 
-    # Just count occurences of ones and zeroes and print them...
-    puts "Found #{bits.count('1')} bits set to 1"
-    puts "Found #{bits.count('0')} bits set to 0"
+    # Just count occurences of ones and print them
+    ones = bits.count('1')
+    puts "Found #{ones} bits set to 1"
+
+    # The zeroes will be all the other bits
+    puts "Found #{bits.length - ones} bits set to 0"
 
     # Print the time needed
     puts "It took me #{((Time.now - start) * 1000).round(2)}ms to get those numbers"
